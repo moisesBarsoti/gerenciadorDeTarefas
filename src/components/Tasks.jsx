@@ -4,7 +4,7 @@ import { MdDeleteForever } from "react-icons/md";
 export const Tasks = ({ tasks, onTaskClick, deleteTask }) => {
   return (
     <div>
-      <ul className="space-y-4 p-6 bg-slate-200 rounded-md shadow outline-none">
+      <ul className="space-y-4 p-6 h-full bg-slate-200 rounded-md shadow outline-none">
         <h1 className="text-xl flex justify-center text-black font-bold">Minhas Tarefas</h1>
         {tasks.map((task) => (
           <li key={task.id} className="flex gap-2">

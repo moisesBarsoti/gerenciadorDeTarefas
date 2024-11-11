@@ -5,7 +5,7 @@ export const AddTasks = ({ addTask }) => {
   const [descrption, setDescrption] = useState("");
 
   return (
-    <div className="space-y-4 p-8 bg-slate-200 rounded-md shadow outline-none mb-5">
+    <div className="space-y-4 p-6 h-full bg-slate-200 rounded-md shadow outline-none mb-5">
       <input
         type="text"
         placeholder="Digite o título da tarefa"
