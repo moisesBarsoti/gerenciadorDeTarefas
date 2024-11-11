@@ -15,13 +15,13 @@ export const AddTasks = ({ addTask }) => {
         onChange={(e) => setTitle(e.target.value)}
         className="text-black border-black outline-none w-full p-2 rounded-md placeholder:font-bold"
       />
-      <input
+      <textarea
         type="text"
         placeholder="Digite a descrição da tarefa"
         required
         value={descrption}
         onChange={(e) => setDescrption(e.target.value)}
-        className="text-black outline-none w-full p-2 rounded-md placeholder:font-bold"
+        className="text-black outline-none w-full p-2 h-20 resize-none rounded-md placeholder:font-bold"
       />
       <button
         className="

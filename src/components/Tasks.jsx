@@ -4,7 +4,8 @@ import { MdDeleteForever } from "react-icons/md";
 export const Tasks = ({ tasks, onTaskClick, deleteTask }) => {
   return (
     <div>
-      <ul className="space-y-4 p-8 bg-slate-200 rounded-md shadow outline-none">
+      <ul className="space-y-4 p-6 bg-slate-200 rounded-md shadow outline-none">
+        <h1 className="text-xl flex justify-center text-black font-bold">Minhas Tarefas</h1>
         {tasks.map((task) => (
           <li key={task.id} className="flex gap-2">
             <button
@@ -15,10 +16,10 @@ export const Tasks = ({ tasks, onTaskClick, deleteTask }) => {
             >
               {task.title}
             </button>
-            <button 
-            className="bg-slate-400 p-2 rounded-md transition-all duration-500 hover:bg-blue-400"
-            title="Ver descrição"
-             >
+            <button
+              className="bg-slate-400 p-2 rounded-md transition-all duration-500 hover:bg-blue-400"
+              title="Ver descrição"
+            >
               <IoIosArrowForward />
             </button>
             <button
