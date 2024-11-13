@@ -10,7 +10,8 @@ export default {
         Roboto: ['Roboto', 'sans-serif'],
       },
       screens: {
-        '50rem': {'max': '50rem'},
+        '50rem': { 'max': '50rem' },
+        '31.2rem': { 'max': '31.2rem' },
         'sm': '640px',
         'md': '768px',
         'lg': '1024px',

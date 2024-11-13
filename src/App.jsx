@@ -25,6 +25,8 @@ export const App = () => {
     },
   ]);
 
+  // Ver decrição da tarefa 
+
   const onTaskClick = (taskId) => {
     const newTasks = tasks.map((task) => {
       if (task.id === taskId)
@@ -33,6 +35,8 @@ export const App = () => {
     });
     setTasks(newTasks);
   };
+
+  // Deletar Tasks
 
   const deleteTask = (taskId) => {
     const newTasks = tasks.filter((task) => task.id !== taskId);
@@ -55,10 +59,11 @@ export const App = () => {
     <div
       className="
     w-screen h-screen 
-    bg-[conic-gradient(at_bottom_right,_var(--tw-gradient-stops))] from-blue-700 via-blue-800 to-gray-900  
+    bg-[conic-gradient(at_bottom_right,_var(--tw-gradient-stops))] from-blue-700 via-blue-800 to-gray-900 
     text-white
     flex justify-center items-center flex-col
     font-Roboto
+    rem:text-xs
     "
     >
       <h1 className="text-3xl text-slate-100 font-bold p-6">
