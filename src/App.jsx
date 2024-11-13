@@ -1,31 +1,36 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { v4 as uuid } from "uuid";
 import { Tasks } from "./components/Tasks";
 import { AddTasks } from "./components/AddTasks";
 
 export const App = () => {
   const [tasks, setTasks] = useState([
-    {
-      id: uuid(),
-      title: "Estudar programação",
-      descrption: "Estudar programação para se tornar dev Fullstack",
-      isCompleted: false,
-    },
-    {
-      id: uuid(),
-      title: "Estudar programação",
-      descrption: "Estudar programação para se tornar dev Fullstack",
-      isCompleted: false,
-    },
-    {
-      id: uuid(),
-      title: "Estudar programação",
-      descrption: "Estudar programação para se tornar dev Fullstack",
-      isCompleted: false,
-    },
+    JSON.parse(localStorage.getItem("tasks")) || [],
   ]);
 
-  // Ver decrição da tarefa 
+  // UseEffect / Local storage
+
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
+
+  // Exemplo com API
+
+  // useEffect(() => {
+  //   async function fetchTasks() {
+  //     const response = await fetch(
+  //       "https://jsonplaceholder.typicode.com/todos?_limit=3",
+  //       {
+  //         method: "GET",
+  //       }
+  //     );
+  //     const data = await response.json();
+  //     setTasks(data);
+  //   }
+  //   // fetchTasks();
+  // }, []);
+
+  // Ver decrição da tarefa
 
   const onTaskClick = (taskId) => {
     const newTasks = tasks.map((task) => {
@@ -50,10 +55,10 @@ export const App = () => {
       id: tasks.length + 1,
       title,
       descrption,
-      isCompleted: false
-    }
-    setTasks([...tasks, newTask])
-  }
+      isCompleted: false,
+    };
+    setTasks([...tasks, newTask]);
+  };
 
   return (
     <div
@@ -63,6 +68,7 @@ export const App = () => {
     text-white
     flex justify-center items-center flex-col
     font-Roboto
+    overflow-x-hidden
     rem:text-xs
     "
     >
@@ -70,7 +76,7 @@ export const App = () => {
         Gerenciador de Tarefas
       </h1>
       <div className="flex gap-3 50rem:flex-col">
-        <AddTasks addTask={addTask}/>
+        <AddTasks addTask={addTask} />
         <Tasks
           tasks={tasks}
           onTaskClick={onTaskClick}
