@@ -31,11 +31,11 @@ export const AddTasks = ({ addTask }) => {
         title="Adicionar Tarefa"
         onClick={() => {
           if (!title.trim() || !descrption.trim()) {
-            return alert("Preencha o título e a descrição da tarefa")
+            return alert("Preencha o título e a descrição da tarefa");
           }
           addTask(title, descrption);
-          setTitle("")
-          setDescrption("")
+          setTitle("");
+          setDescrption("");
         }}
       >
         Adicionar Tarefa
